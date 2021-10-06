@@ -1,15 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bierbottle.Identity.Domain.Models
 {
-    public class AppRole
+    public class AppRole : IdentityRole<Guid>
     {
-        public Guid Id { get; set; }
-        public string UniqueName { get; set; }
-        public string FriendlyName { get; set; }
+        public List<AppUserRoles> UserRoles { get; set; }
     }
 }

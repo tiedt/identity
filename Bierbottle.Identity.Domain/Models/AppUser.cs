@@ -1,16 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bierbottle.Identity.Domain.Models
 {
-    public class AppUser
+    public class AppUser : IdentityUser<Guid>
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public byte[] Password { get; set; }
+        public List<AppUserRoles> UserRoles { get; set; }
     }
 }
